@@ -1,10 +1,11 @@
-package sample;
+package escala;
 
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 public class Controller {
 
     public Label helloWorld;
+
 
     public void sayHelloWorld(ActionEvent actionEvent){
 
