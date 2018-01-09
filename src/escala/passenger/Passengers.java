@@ -2,6 +2,7 @@ package com.muuyal.escala.passengers;
 
 import java.*;
 
+
 public class Passengers {
 
 
@@ -22,7 +23,7 @@ public class Passengers {
         this.eMail = eMail;
     }
 
-    //Metodos
+    // Metodos
 
     public void setName(String name) {
         this.name = name;

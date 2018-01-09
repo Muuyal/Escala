@@ -1,3 +1,8 @@
+package com.muuyal.escala.staff;
+
+import java.*;
+
+
 public class Staff {
     private String name;
     private String eMail;

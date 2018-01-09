@@ -1,4 +1,10 @@
-public class Travels{
+package com.muuyal.escala.travels;
+
+import java.*;
+
+
+public class Travel{
+
     private String name;
     private String destination;
     private char leftDate;
@@ -7,7 +13,7 @@ public class Travels{
     private int seasonPay;
     private int numPay;
 
-    Travels (String name, String destination, char leftDate, int price){
+    Travel (String name, String destination, char leftDate, int price){
         this.name = name;
         this.destination = destination;
         this.leftDate = leftDate;
