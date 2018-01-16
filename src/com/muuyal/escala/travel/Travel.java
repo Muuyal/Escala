@@ -2,22 +2,21 @@ package com.muuyal.escala.travel;
 
 import java.util.Date;
 
-
 public class Travel{
 
+    private Integer id;
     private String name;
     private String destination;
     private Date departure;
     private Date deadline;
     private Integer price;
     private Integer payments;
-    private Integer numPay;
 
-    Travel (String name, String destination, Date departure, Integer price){
-        this.setName(name);
-        this.setDestination(destination);
-        this.setDeparture(departure);
-        this.setPrice(price);
+    public Travel(Integer id, String name, String destination, Integer price) {
+        this.id = id;
+        this.name = name;
+        this.destination = destination;
+        this.price = price;
     }
 
     public String getName() {
@@ -68,12 +67,7 @@ public class Travel{
         this.payments = payments;
     }
 
-    public Integer getNumPay() {
-        return numPay;
-    }
+    public Integer getId() { return id; }
 
-    public void setNumPay(Integer numPay) {
-        this.numPay = numPay;
-    }
-
+    public void setId(Integer id) { this.id = id; }
 }
