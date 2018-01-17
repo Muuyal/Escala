@@ -4,9 +4,10 @@ import java.util.Date;
 
 public class Payment {
 
+    private Integer id;
     private String user;
     private String travel;
-    private Integer paymentAmount ;
+    private Integer paymentAmount;
     private Integer total;
     private Integer amountLeft;
     private Date date;
@@ -68,7 +69,12 @@ public class Payment {
     public void setDate(Date date) {
         this.date = date;
     }
-    
-    
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

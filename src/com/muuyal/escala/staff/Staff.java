@@ -1,18 +1,16 @@
 package com.muuyal.escala.staff;
 
-import java.*;
-
-
 public class Staff {
 
+    private Integer id;
     private String name;
     private String eMail;
-    private char phone;
+    private Integer phone;
     private String address;
     private String area;
-    private int salary;
-    private char user;
-    private char password;
+    private Integer salary;
+    private String user;
+    private String password;
 
     Staff (String name, String eMail, int salary){
         this.name = name;
@@ -38,11 +36,11 @@ public class Staff {
         this.eMail = eMail;
     }
 
-    public char getPhone() {
+    public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(char phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
 
@@ -70,19 +68,27 @@ public class Staff {
         this.salary = salary;
     }
 
-    public char getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(char user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
-    public char getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(char password) {
+    public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

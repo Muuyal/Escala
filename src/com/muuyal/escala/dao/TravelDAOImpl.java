@@ -10,15 +10,18 @@ import java.util.List;
 public class TravelDAOImpl extends Conexion implements TravelDAO {
 
     @Override
-    public void registrar(Travel trav) throws Exception {
+    public void registrar(Travel travel) throws Exception {
         try{
             this.conectar();
-            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO travel (id, name, destination, price) VALUES (?, ?, ?, ?)");
-            st.setInt(1, trav.setId());
-            st.setString(2, trav.setName());
-            st.setString(3, trav.setDestination());
-            st.setInt(4, trav.setPrice());
-            st.executeUpdate();
+            PreparedStatement statementSQL = this.conexion.prepareStatement("INSERT INTO travel (id, name, destination, departure, deadline, price, payments) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            statementSQL.setInt(1, travel.getId());
+            statementSQL.setString(2, travel.getName());
+            statementSQL.setString(3, travel.getDestination());
+            statementSQL.setDate(4, travel.getDeparture());
+            statementSQL.setDate(5, travel.getDeadline());
+            statementSQL.setInt(6, travel.getPrice());
+            statementSQL.setInt(7, travel.getPayments());
+            statementSQL.executeUpdate();
         } catch(Exception e){
             throw e;
         } finally{
@@ -27,15 +30,15 @@ public class TravelDAOImpl extends Conexion implements TravelDAO {
     }
 
     @Override
-    public void modificar(Travel trav) throws Exception {
+    public void modificar(Travel travel) throws Exception {
         try{
             this.conectar();
-            PreparedStatement st = this.conexion.prepareStatement("UPDATE travel SET departure = ?, deadline = ?, payments = ? WHERE ID = ?");
-            st.setDate(1, trav.setDeparture());
-            st.setDate(2, trav.setDeadline());
-            st.setInt(3, trav.setPayments());
-            st.setInt(4, trav.setId());
-            st.executeUpdate();
+            PreparedStatement statementSQL = this.conexion.prepareStatement("UPDATE travel SET departure = ?, deadline = ?, payments = ? WHERE ID = ?");
+            statementSQL.setDate(1, travel.getDeparture());
+            statementSQL.setDate(2, travel.getDeadline());
+            statementSQL.setInt(3, travel.getPayments());
+            statementSQL.setInt(4, travel.getId());
+            statementSQL.executeUpdate();
         }catch(Exception e){
             throw e;
         }finally{
@@ -44,12 +47,12 @@ public class TravelDAOImpl extends Conexion implements TravelDAO {
     }
 
     @Override
-    public void eliminar(Travel trav) throws Exception {
+    public void eliminar(Travel travel) throws Exception {
         try{
             this.conectar();
-            PreparedStatement st = this.conexion.prepareStatement("DELETE FROM travel WHERE id = ?");
-            st.setInt(1, trav.setId());
-            st.executeUpdate();
+            PreparedStatement statementSQL = this.conexion.prepareStatement("DELETE FROM travel WHERE id = ?");
+            statementSQL.setInt(1, travel.getId());
+            statementSQL.executeUpdate();
         }catch(Exception e){
             throw e;
         }finally{
@@ -62,17 +65,24 @@ public class TravelDAOImpl extends Conexion implements TravelDAO {
         List<Travel> lista = null;
         try{
             this.conectar();
-            PreparedStatement st = this.conexion.prepareStatement("SELECT * FROM travel");
+            PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM travel");
+
             lista = new ArrayList();
-            ResultSet rs = st.executeQuery();
-            while(rs.next()){
-                Travel trav = new Travel();
-                trav.setId(rs.getInt("id"));
-                trav.setName(rs.getString("name"));
-                lista.add(trav);
+            ResultSet statementSQL2 = statementSQL.executeQuery();
+            while(statementSQL2.next()){
+                Travel travel = new Travel(1,"MEX-USA2", "Esatados Unidos", 500);
+
+                travel.setId(statementSQL2.getInt("id"));
+                travel.setName(statementSQL2.getString("name"));
+                travel.setDestination(statementSQL2.getString("destination"));
+                travel.setDeparture(statementSQL2.getDate("departure"));
+                travel.setDeadline(statementSQL2.getDate("deadline"));
+                travel.setPrice(statementSQL2.getInt("price"));
+                travel.setPayments(statementSQL2.getInt("payments"));
+                lista.add(travel);
             }
-            rs.close();
-            st.close();
+            statementSQL2.close();
+            statementSQL.close();
 
         }catch(Exception e){
             throw e;

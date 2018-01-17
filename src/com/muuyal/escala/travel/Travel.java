@@ -1,6 +1,6 @@
 package com.muuyal.escala.travel;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Travel{
 
@@ -63,11 +63,15 @@ public class Travel{
         return payments;
     }
 
-    public void setPayments(Integer payments) {
-        this.payments = payments;
+    public void setPayments(Integer payments) { 
+        this.payments = payments; 
     }
 
-    public Integer getId() { return id; }
+    public Integer getId() { 
+        return id; 
+    }
 
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Integer id) { 
+        this.id = id; 
+    }
 }

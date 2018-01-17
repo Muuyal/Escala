@@ -4,7 +4,7 @@ import java.*;
 
 public class Passenger {
 
-
+    private Integer id; 
     private String name;
     private String travel;
     private Integer phone;
@@ -14,14 +14,21 @@ public class Passenger {
     private String addressColony;
     private Integer addressPC;
     private String notes;
-    private String id;
 
-    Passenger(String name, int phone, String eMail) {
-        this.setName(name);
-        this.setPhone(phone);
-        this.seteMail(eMail);
+    public Passenger(String name, String travel, Integer phone, String eMail) {
+        this.name = name;
+        this.travel = travel;
+        this.phone = phone;
+        this.eMail = eMail;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -93,13 +100,5 @@ public class Passenger {
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }
