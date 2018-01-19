@@ -8,12 +8,12 @@ public class Conexion {
     
     protected Connection conexion;
     //JDBC driver nombre y base de datos URL
-    private final String JDBC_DRIVER = "";
-    private final String DB_URL = "";
+    private final String JDBC_DRIVER = "org.postgresql.Driver";
+    private final String DB_URL = "jdbc:postgresql://localhost:5432/Escala";
 
     //Base de datos
-    private final String USER = "";
-    private final String PASS = "";
+    private final String USER = "postgres";
+    private final String PASS = "Carlos#123";
 
     public void conectar() throws Exception{
         try{

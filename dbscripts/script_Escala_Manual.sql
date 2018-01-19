@@ -92,8 +92,8 @@ DROP TABLE "Escala".travel;
 CREATE TABLE "Escala".travel
 (
     id integer NOT NULL,
-    name character(50) COLLATE pg_catalog."default" NOT NULL,
-    destination character(30) COLLATE pg_catalog."default" NOT NULL,
+    name character(30) COLLATE pg_catalog."default" NOT NULL,
+    destination character(50) COLLATE pg_catalog."default" NOT NULL,
     departure date,
     deadline date,
     price integer NOT NULL,

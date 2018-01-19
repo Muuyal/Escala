@@ -1,14 +1,18 @@
 package com.muuyal.escala.travel;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class Travel{
+
+    DateFormat date = new SimpleDateFormat("DD/MM/YYYY");
 
     private Integer id;
     private String name;
     private String destination;
-    private Date departure;
-    private Date deadline;
+    private String departure;
+    private String deadline;
     private Integer price;
     private Integer payments;
 
@@ -35,19 +39,19 @@ public class Travel{
         this.destination = destination;
     }
 
-    public Date getDeparture() {
+    public String getDeparture() {
         return departure;
     }
 
-    public void setDeparture(Date departure) {
+    public void setDeparture(String departure) {
         this.departure = departure;
     }
 
-    public Date getDeadline() {
+    public String getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
 
