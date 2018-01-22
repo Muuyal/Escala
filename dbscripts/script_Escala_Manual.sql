@@ -23,12 +23,12 @@ CREATE TABLE "Escala".passenger
     id integer NOT NULL,
     name character(50) COLLATE pg_catalog."default" NOT NULL,
     travel character varying(30) COLLATE pg_catalog."default" NOT NULL,
-    phone integer NOT NULL,
+    phone character varying(10) COLLATE pg_catalog."default" NOT NULL,
     email character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "addressStreet" character varying(30) COLLATE pg_catalog."default",
-    "addressCity" character(30) COLLATE pg_catalog."default",
-    "addressColony" character(20) COLLATE pg_catalog."default",
-    "addressPC" integer,
+    addressStreet character varying(30) COLLATE pg_catalog."default",
+    addressCity character(30) COLLATE pg_catalog."default",
+    addressColony character(20) COLLATE pg_catalog."default",
+    addressPC integer,
     notes character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT passenger_pkey PRIMARY KEY (id)
 )
@@ -94,8 +94,8 @@ CREATE TABLE "Escala".travel
     id integer NOT NULL,
     name character(30) COLLATE pg_catalog."default" NOT NULL,
     destination character(50) COLLATE pg_catalog."default" NOT NULL,
-    departure date,
-    deadline date,
+    departure character varying(10) COLLATE pg_catalog."default",
+    deadline character varying(10) COLLATE pg_catalog."default",
     price integer NOT NULL,
     payments integer,
     CONSTRAINT travel_pkey PRIMARY KEY (id)

@@ -4,10 +4,10 @@ import java.*;
 
 public class Passenger {
 
-    private Integer id; 
+    private Integer id;
     private String name;
     private String travel;
-    private Integer phone;
+    private String phone;
     private String eMail;
     private String addressStreet;
     private String addressCity;
@@ -15,7 +15,7 @@ public class Passenger {
     private Integer addressPC;
     private String notes;
 
-    public Passenger(String name, String travel, Integer phone, String eMail) {
+    public Passenger(String name, String travel, String phone, String eMail) {
         this.name = name;
         this.travel = travel;
         this.phone = phone;
@@ -46,11 +46,11 @@ public class Passenger {
         this.travel = travel;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
