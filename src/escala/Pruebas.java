@@ -1,10 +1,13 @@
 package escala;
 
 import com.muuyal.escala.dao.PassengerDAOImpl;
+import com.muuyal.escala.dao.PaymentDAOImpl;
 import com.muuyal.escala.dao.TravelDAOImpl;
 import com.muuyal.escala.interfaces.PassengersDAO;
+import com.muuyal.escala.interfaces.PaymentDAO;
 import com.muuyal.escala.interfaces.TravelDAO;
 import com.muuyal.escala.passenger.Passenger;
+import com.muuyal.escala.payment.Payment;
 import com.muuyal.escala.travel.Travel;
 
 import java.text.DateFormat;
@@ -95,7 +98,42 @@ public class Pruebas {
         }
     */
 
+    /*
+        //Payment
 
+        Payment payment = new Payment("","",0,"");
+        /*payment.setId(3);
+        payment.setUser("Papu");
+        payment.setTravel("perro");
+        payment.setPaymentAmount(1);
+        payment.setTotal(2);
+        payment.setAmountLeft(3);
+        payment.setDate("01/01/1944");
+        payment.setId(3);
+
+        try{
+            PaymentDAO dao = new PaymentDAOImpl();
+            //dao.eliminar(payment);
+
+            dao.listar();
+
+            for (Payment p : dao.listar()){
+
+                System.out.print(p.getId()+" ");
+                System.out.print(p.getUser()+" ");
+                System.out.print(p.getTravel()+" ");
+                System.out.print(p.getPaymentAmount()+" ");
+                System.out.print(p.getTotal()+" ");
+                System.out.print(p.getAmountLeft()+" ");
+                System.out.println(p.getDate()+" ");
+            }
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    */
+
+    
 
     }
 }

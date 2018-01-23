@@ -16,6 +16,7 @@ CREATE SCHEMA "Escala"
 
 --Tablas
 --passenger
+
 DROP TABLE "Escala".passenger;
 
 CREATE TABLE "Escala".passenger
@@ -24,11 +25,11 @@ CREATE TABLE "Escala".passenger
     name character(50) COLLATE pg_catalog."default" NOT NULL,
     travel character varying(30) COLLATE pg_catalog."default" NOT NULL,
     phone character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    email character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    addressStreet character varying(30) COLLATE pg_catalog."default",
-    addressCity character(30) COLLATE pg_catalog."default",
-    addressColony character(20) COLLATE pg_catalog."default",
-    addressPC integer,
+    "eMail" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "addressStreet" character varying(30) COLLATE pg_catalog."default",
+    "addressCity" character(30) COLLATE pg_catalog."default",
+    "addressColony" character(20) COLLATE pg_catalog."default",
+    "addressPC" integer,
     notes character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT passenger_pkey PRIMARY KEY (id)
 )
@@ -41,6 +42,7 @@ ALTER TABLE "Escala".passenger
     OWNER to postgres;
 
 --payment
+
 DROP TABLE "Escala".payment;
 
 CREATE TABLE "Escala".payment
@@ -51,7 +53,7 @@ CREATE TABLE "Escala".payment
     "paymentAmount" integer,
     total integer NOT NULL,
     "amountLeft" integer,
-    date date NOT NULL,
+    date character varying(10) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT payment_pkey PRIMARY KEY (id)
 )
 WITH (
@@ -63,30 +65,11 @@ ALTER TABLE "Escala".payment
     OWNER to postgres;
 
 --staff
-DROP TABLE "Escala".staff;
 
-CREATE TABLE "Escala".staff
-(
-    id integer NOT NULL,
-    name character(50) COLLATE pg_catalog."default" NOT NULL,
-    email character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    phone integer,
-    address character varying(90) COLLATE pg_catalog."default",
-    area character(20) COLLATE pg_catalog."default",
-    salary integer NOT NULL,
-    "user" character varying(20) COLLATE pg_catalog."default",
-    password character varying(20) COLLATE pg_catalog."default",
-    CONSTRAINT staff_pkey PRIMARY KEY (id)
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
 
-ALTER TABLE "Escala".staff
-    OWNER to postgres;
 
 --travel
+
 DROP TABLE "Escala".travel;
 
 CREATE TABLE "Escala".travel
@@ -94,8 +77,8 @@ CREATE TABLE "Escala".travel
     id integer NOT NULL,
     name character(30) COLLATE pg_catalog."default" NOT NULL,
     destination character(50) COLLATE pg_catalog."default" NOT NULL,
-    departure character varying(10) COLLATE pg_catalog."default",
-    deadline character varying(10) COLLATE pg_catalog."default",
+    departure character varying(10) COLLATE pg_catalog."default", --date,
+    deadline character varying(10) COLLATE pg_catalog."default", -- date,
     price integer NOT NULL,
     payments integer,
     CONSTRAINT travel_pkey PRIMARY KEY (id)
@@ -109,21 +92,4 @@ ALTER TABLE "Escala".travel
     OWNER to postgres;
 
 --user
-DROP TABLE "Escala"."user";
-
-CREATE TABLE "Escala"."user"
-(
-    id integer NOT NULL,
-    "userName" character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    password character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    rol character varying(30) COLLATE pg_catalog."default",
-    CONSTRAINT user_pkey PRIMARY KEY (id)
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
-
-ALTER TABLE "Escala"."user"
-    OWNER to postgres;
 

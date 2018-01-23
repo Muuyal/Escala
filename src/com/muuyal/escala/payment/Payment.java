@@ -10,10 +10,10 @@ public class Payment {
     private Integer paymentAmount;
     private Integer total;
     private Integer amountLeft;
-    private Date date;
-    
+    private String date;
+
     //Constructor
-    public Payment(String user, String travel, Integer total, Date date) {
+    public Payment(String user, String travel, Integer total, String  date) {
         this.user = user;
         this.travel = travel;
         this.total = total;
@@ -41,7 +41,7 @@ public class Payment {
         return amountLeft;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -66,7 +66,7 @@ public class Payment {
         this.amountLeft = amountLeft;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String  date) {
         this.date = date;
     }
 

@@ -2,30 +2,21 @@ package com.muuyal.escala.user;
 
 public class User{
 
-    private Integer id;
-    private String userName;
+    private String userID;
     private String password;
     private String rol;
 
-    public User(String userName, String password) {
-        this.userName = userName;
+    public User(String userID, String password) {
+        this.userID = userID;
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserID(String userName) {
+        this.userID = userName;
     }
 
     public String getPassword() {
