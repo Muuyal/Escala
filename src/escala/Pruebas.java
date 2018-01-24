@@ -1,17 +1,12 @@
 package escala;
 
-import com.muuyal.escala.dao.PassengerDAOImpl;
-import com.muuyal.escala.dao.PaymentDAOImpl;
-import com.muuyal.escala.dao.StaffDAOImpl;
-import com.muuyal.escala.dao.TravelDAOImpl;
-import com.muuyal.escala.interfaces.PassengersDAO;
-import com.muuyal.escala.interfaces.PaymentDAO;
-import com.muuyal.escala.interfaces.StaffDAO;
-import com.muuyal.escala.interfaces.TravelDAO;
+import com.muuyal.escala.dao.*;
+import com.muuyal.escala.interfaces.*;
 import com.muuyal.escala.passenger.Passenger;
 import com.muuyal.escala.payment.Payment;
 import com.muuyal.escala.staff.Staff;
 import com.muuyal.escala.travel.Travel;
+import com.muuyal.escala.user.User;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -177,7 +172,36 @@ public class Pruebas {
         }
      */
 
-        
+    /*
+
+        //User
+
+        User user = new User("", "");
+
+        user.setUserID("Jogeceva");
+        user.setPassword("contaseñarenovada");
+        user.setRol("Doctor");
+        user.setUserID("Jogeceva");
+
+
+        try{
+            UserDAO dao = new UserDAOImpl();
+            //dao.eliminar(user);
+
+            dao.listar();
+
+            for (User u : dao.listar()){
+
+                System.out.print(u.getUserID()+" ");
+                System.out.print(u.getPassword()+" ");
+                System.out.println(u.getRol()+" ");
+
+            }
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    */
 
     }
 }
