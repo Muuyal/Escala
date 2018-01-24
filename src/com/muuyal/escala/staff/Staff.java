@@ -5,14 +5,14 @@ public class Staff {
     private Integer id;
     private String name;
     private String eMail;
-    private Integer phone;
+    private String phone;
     private String address;
     private String area;
     private Integer salary;
     private String user;
     private String password;
 
-    Staff (String name, String eMail, int salary){
+    public Staff (String name, String eMail, int salary){
         this.name = name;
         this.eMail = eMail;
         this.salary = salary;
@@ -36,11 +36,11 @@ public class Staff {
         this.eMail = eMail;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

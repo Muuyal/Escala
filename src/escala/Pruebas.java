@@ -2,12 +2,15 @@ package escala;
 
 import com.muuyal.escala.dao.PassengerDAOImpl;
 import com.muuyal.escala.dao.PaymentDAOImpl;
+import com.muuyal.escala.dao.StaffDAOImpl;
 import com.muuyal.escala.dao.TravelDAOImpl;
 import com.muuyal.escala.interfaces.PassengersDAO;
 import com.muuyal.escala.interfaces.PaymentDAO;
+import com.muuyal.escala.interfaces.StaffDAO;
 import com.muuyal.escala.interfaces.TravelDAO;
 import com.muuyal.escala.passenger.Passenger;
 import com.muuyal.escala.payment.Payment;
+import com.muuyal.escala.staff.Staff;
 import com.muuyal.escala.travel.Travel;
 
 import java.text.DateFormat;
@@ -133,7 +136,48 @@ public class Pruebas {
         }
     */
 
-    
+    /*
+        //Staff
+
+        Staff staff = new Staff("", "",0);
+
+        /*staff.setId(3);
+        staff.setName("Registro para eliminar");
+        staff.seteMail("correo@correo.com");
+        staff.setPhone("6141234567");
+        staff.setAddress("No me acuerdo");
+        staff.setArea("Seguridad");
+        staff.setSalary(12000);
+        staff.setUser("usuarioGenerico");
+        staff.setPassword("passGenericaXD");
+        staff.setId(3);
+
+        try{
+            StaffDAO dao = new StaffDAOImpl();
+            //dao.eliminar(staff);
+
+            dao.listar();
+
+            for (Staff s : dao.listar()){
+
+                System.out.print(s.getId()+" ");
+                System.out.print(s.getName()+" ");
+                System.out.print(s.geteMail()+" ");
+                System.out.print(s.getPhone()+" ");
+                System.out.print(s.getAddress()+" ");
+                System.out.print(s.getArea()+" ");
+                System.out.print(s.getSalary()+" ");
+                System.out.print(s.getUser()+" ");
+                System.out.println(s.getPassword());
+
+            }
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+     */
+
+        
 
     }
 }
