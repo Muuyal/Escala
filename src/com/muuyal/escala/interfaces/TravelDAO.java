@@ -5,9 +5,9 @@ import com.muuyal.escala.travel.Travel;
 
 public interface TravelDAO {
     
-    public void registrar(Travel travel) throws Exception;
-    public void modificar(Travel travel) throws Exception;
-    public void eliminar(Travel travel) throws Exception;
-    public List<Travel> listar() throws Exception;
+    public void save(Travel travel) throws Exception;
+    public void update(Travel travel) throws Exception;
+    public void delete(Travel travel) throws Exception;
+    public List<Travel> findAll() throws Exception;
     
 }

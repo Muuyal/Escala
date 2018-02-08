@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PaymentDAOImpl extends Conexion implements PaymentDAO{
+
     @Override
-    public void registrar(Payment payment) throws Exception {
+    public void save(Payment payment) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("INSERT INTO \"Escala\".payment(\n" +
@@ -32,7 +33,7 @@ public class PaymentDAOImpl extends Conexion implements PaymentDAO{
     }
 
     @Override
-    public void modificar(Payment payment) throws Exception {
+    public void update(Payment payment) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("UPDATE \"Escala\".payment\n" +
@@ -55,7 +56,7 @@ public class PaymentDAOImpl extends Conexion implements PaymentDAO{
     }
 
     @Override
-    public void eliminar(Payment payment) throws Exception {
+    public void delete(Payment payment) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("DELETE FROM \"Escala\".payment\n" +
@@ -70,7 +71,7 @@ public class PaymentDAOImpl extends Conexion implements PaymentDAO{
     }
 
     @Override
-    public List<Payment> listar() throws Exception {
+    public List<Payment> findAll() throws Exception {
         List<Payment> lista = null;
         try{
             this.conectar();

@@ -5,8 +5,8 @@ import com.muuyal.escala.passenger.Passenger;
 
 public interface PassengersDAO {
 
-    public void registrar(Passenger passenger) throws Exception;
-    public void modificar(Passenger passenger) throws Exception;
-    public void eliminar(Passenger passenger) throws Exception;
-    public List<Passenger> listar() throws Exception;
+    public void save(Passenger passenger) throws Exception;
+    public void update(Passenger passenger) throws Exception;
+    public void delete(Passenger passenger) throws Exception;
+    public List<Passenger> findAll() throws Exception;
 }

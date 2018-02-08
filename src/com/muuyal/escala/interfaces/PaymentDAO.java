@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface PaymentDAO {
 
-    public void registrar(Payment payment) throws Exception;
-    public void modificar(Payment payment) throws Exception;
-    public void eliminar(Payment payment) throws Exception;
-    public List<Payment> listar() throws Exception;
+    public void save(Payment payment) throws Exception;
+    public void update(Payment payment) throws Exception;
+    public void delete(Payment payment) throws Exception;
+    public List<Payment> findAll() throws Exception;
 }

@@ -10,7 +10,7 @@ import java.util.List;
 public class TravelDAOImpl extends Conexion implements TravelDAO {
 
     @Override
-    public void registrar(Travel travel) throws Exception {
+    public void save(Travel travel) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("INSERT INTO \"Escala\".travel(\n" +
@@ -32,7 +32,7 @@ public class TravelDAOImpl extends Conexion implements TravelDAO {
     }
 
     @Override
-    public void modificar(Travel travel) throws Exception {
+    public void update(Travel travel) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("UPDATE \"Escala\".travel\n" +
@@ -55,7 +55,7 @@ public class TravelDAOImpl extends Conexion implements TravelDAO {
     }
 
     @Override
-    public void eliminar(Travel travel) throws Exception {
+    public void delete(Travel travel) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("DELETE FROM \"Escala\".travel\n" +
@@ -70,7 +70,7 @@ public class TravelDAOImpl extends Conexion implements TravelDAO {
     }
 
     @Override
-    public List<Travel> listar() throws Exception {
+    public List<Travel> findAll() throws Exception {
         List<Travel> lista = null;
         try{
             this.conectar();

@@ -10,7 +10,7 @@ import java.util.List;
 public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
 
     @Override
-    public void registrar(Passenger passenger) throws Exception {
+    public void save(Passenger passenger) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("INSERT INTO \"Escala\".passenger(\n" +
@@ -35,7 +35,7 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
     }
 
     @Override
-    public void modificar(Passenger passenger) throws Exception {
+    public void update(Passenger passenger) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("UPDATE \"Escala\".passenger\n" +
@@ -61,7 +61,7 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
     }
 
     @Override
-    public void eliminar(Passenger passenger) throws Exception {
+    public void delete(Passenger passenger) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("DELETE FROM \"Escala\".passenger\n" +
@@ -76,8 +76,9 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
     }
 
     @Override
-    public List<Passenger> listar() throws Exception {
+    public List<Passenger> findAll() throws Exception {
         List<Passenger> lista = null;
+
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger");

@@ -10,7 +10,7 @@ import java.util.List;
 public class StaffDAOImpl extends Conexion implements StaffDAO{
 
     @Override
-    public void registrar(Staff staff) throws Exception {
+    public void save(Staff staff) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("INSERT INTO \"Escala\".staff(\n" +
@@ -34,7 +34,7 @@ public class StaffDAOImpl extends Conexion implements StaffDAO{
     }
 
     @Override
-    public void modificar(Staff staff) throws Exception {
+    public void update(Staff staff) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("UPDATE \"Escala\".staff\n" +
@@ -59,7 +59,7 @@ public class StaffDAOImpl extends Conexion implements StaffDAO{
     }
 
     @Override
-    public void eliminar(Staff staff) throws Exception {
+    public void delete(Staff staff) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("DELETE FROM \"Escala\".staff\n" +
@@ -74,7 +74,7 @@ public class StaffDAOImpl extends Conexion implements StaffDAO{
     }
 
     @Override
-    public List<Staff> listar() throws Exception {
+    public List<Staff> findAll() throws Exception {
         List<Staff> lista = null;
         try{
             this.conectar();

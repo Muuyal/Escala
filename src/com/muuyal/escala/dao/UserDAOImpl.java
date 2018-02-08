@@ -8,8 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAOImpl extends Conexion implements UserDAO {
+
     @Override
-    public void registrar(User user) throws Exception {
+    public void save(User user) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("INSERT INTO \"Escala\".\"user\"(\n" +
@@ -26,7 +27,7 @@ public class UserDAOImpl extends Conexion implements UserDAO {
     }
 
     @Override
-    public void modificar(User user) throws Exception {
+    public void update(User user) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("UPDATE \"Escala\".\"user\"\n" +
@@ -44,7 +45,7 @@ public class UserDAOImpl extends Conexion implements UserDAO {
     }
 
     @Override
-    public void eliminar(User user) throws Exception {
+    public void delete(User user) throws Exception {
         try{
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("DELETE FROM \"Escala\".\"user\"\n" +
@@ -59,7 +60,7 @@ public class UserDAOImpl extends Conexion implements UserDAO {
     }
 
     @Override
-    public List<User> listar() throws Exception {
+    public List<User> findAll() throws Exception {
         List<User> lista = null;
         try{
             this.conectar();
