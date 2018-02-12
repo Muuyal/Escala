@@ -53,12 +53,12 @@ public class Pruebas {
         }
     */
 
-    /*
+
         //Passenger
 
         Passenger passenger = new Passenger("", "","", "");
 
-        passenger.setId(2);
+        /*passenger.setId(2);
         passenger.setName("Potato");
         passenger.setTravel("Amarillo");
         passenger.setPhone("6391002487");
@@ -68,16 +68,16 @@ public class Pruebas {
         passenger.setAddressColony("niño ratta");
         passenger.setAddressPC(9080);
         passenger.setNotes("Hakeo feisbu y otras cosas");
-        passenger.setId(2);
+        passenger.setId(2);*/
 
         try{
 
             PassengersDAO dao = new PassengerDAOImpl();
             //dao.modificar(passenger);
 
-            dao.listar();
+            dao.findAll("1");
 
-            for (Passenger p : dao.listar()){
+            for (Passenger p : dao.findAll("1")){
 
                 System.out.print(p.getId()+" ");
                 System.out.print(p.getName()+" ");
@@ -94,7 +94,7 @@ public class Pruebas {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-    */
+
 
     /*
         //Payment

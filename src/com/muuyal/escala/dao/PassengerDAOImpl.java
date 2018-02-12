@@ -5,7 +5,9 @@ import com.muuyal.escala.passenger.Passenger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
 
@@ -114,6 +116,83 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
 
     @Override
     public List<Passenger> findAll(String search) throws Exception {
-        return null;
+
+        List<Passenger> lista = null;
+        Set<Passenger> result = new HashSet<>();
+
+        try{
+            this.conectar();
+
+            if (search.matches("[a-zA-Z]+.?")){
+                // TODO search for string fields
+                PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger " +
+                        "WHERE name = ? OR travel = ? OR phone = ? OR \"eMail\" = ? OR \"addressStreet\" = ? OR " +
+                        "\"addressCity\" = ? OR \"addressColony\" = ? OR notes = ?");
+                statementSQL.setString(1, search);
+                statementSQL.setString(2, search);
+                statementSQL.setString(3, search);
+                statementSQL.setString(4, search);
+                statementSQL.setString(5, search);
+                statementSQL.setString(6, search);
+                statementSQL.setString(7, search);
+                statementSQL.setString(8, search);
+
+                lista = new ArrayList();
+                ResultSet statementSQL2 = statementSQL.executeQuery();
+                while(statementSQL2.next()){
+                    Passenger passenger = new Passenger("", "","", "");
+
+                    passenger.setId(statementSQL2.getInt("id"));
+                    passenger.setName(statementSQL2.getString("name"));
+                    passenger.setTravel(statementSQL2.getString("travel"));
+                    passenger.setPhone(statementSQL2.getString("phone"));
+                    passenger.seteMail(statementSQL2.getString("eMail"));
+                    passenger.setAddressStreet(statementSQL2.getString("addressStreet"));
+                    passenger.setAddressCity(statementSQL2.getString("addressCity"));
+                    passenger.setAddressColony(statementSQL2.getString("addressColony"));
+                    passenger.setAddressPC(statementSQL2.getInt("addressPC"));
+                    passenger.setNotes(statementSQL2.getString("notes"));
+
+                    lista.add(passenger);
+                }
+                statementSQL2.close();
+                statementSQL.close();
+
+            } else {
+                Integer temp = Integer.valueOf(search);
+                // TODO search for integer fields
+                PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger " +
+                        "WHERE id = 0 OR \"addressPC\" = 0 ");
+                statementSQL.setInt(1, temp);
+                statementSQL.setInt(2, temp);
+
+                lista = new ArrayList();
+                ResultSet statementSQL2 = statementSQL.executeQuery();
+                while(statementSQL2.next()){
+                    Passenger passenger = new Passenger("", "","", "");
+
+                    passenger.setId(statementSQL2.getInt("id"));
+                    passenger.setName(statementSQL2.getString("name"));
+                    passenger.setTravel(statementSQL2.getString("travel"));
+                    passenger.setPhone(statementSQL2.getString("phone"));
+                    passenger.seteMail(statementSQL2.getString("eMail"));
+                    passenger.setAddressStreet(statementSQL2.getString("addressStreet"));
+                    passenger.setAddressCity(statementSQL2.getString("addressCity"));
+                    passenger.setAddressColony(statementSQL2.getString("addressColony"));
+                    passenger.setAddressPC(statementSQL2.getInt("addressPC"));
+                    passenger.setNotes(statementSQL2.getString("notes"));
+
+                    lista.add(passenger);
+                }
+                statementSQL2.close();
+                statementSQL.close();
+            }
+
+        }catch(Exception e){
+            throw e;
+        }finally{
+            this.cerrar();
+        }
+        return lista;
     }
 }
