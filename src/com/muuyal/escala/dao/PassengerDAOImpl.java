@@ -111,4 +111,9 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
         }
         return lista;
     }
+
+    @Override
+    public List<Passenger> findAll(String search) throws Exception {
+        return null;
+    }
 }

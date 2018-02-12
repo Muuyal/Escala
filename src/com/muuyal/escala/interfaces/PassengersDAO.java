@@ -9,4 +9,5 @@ public interface PassengersDAO {
     public void update(Passenger passenger) throws Exception;
     public void delete(Passenger passenger) throws Exception;
     public List<Passenger> findAll() throws Exception;
+    public List<Passenger> findAll(String search) throws Exception;
 }
