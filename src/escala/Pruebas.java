@@ -59,25 +59,25 @@ public class Pruebas {
         Passenger passenger = new Passenger("", "","", "");
 
         /*passenger.setId(2);
-        passenger.setName("Potato");
-        passenger.setTravel("Amarillo");
-        passenger.setPhone("6391002487");
-        passenger.seteMail("Anuma!!!");
-        passenger.setAddressStreet("jajaja");
-        passenger.setAddressCity("Soy pro");
-        passenger.setAddressColony("niño ratta");
-        passenger.setAddressPC(9080);
-        passenger.setNotes("Hakeo feisbu y otras cosas");
-        passenger.setId(2);*/
+        passenger.setName("Chihuahua - Cd de México");
+        passenger.setTravel("CUU-CDMX");
+        passenger.setPhone("6142098756");
+        passenger.seteMail("correo.user2@gmail.com");
+        passenger.setAddressStreet("Revolucion");
+        passenger.setAddressCity("Delicias");
+        passenger.setAddressColony("Centro sur");
+        passenger.setAddressPC(33000);
+        passenger.setNotes("Texto de nota establecido por mi en Itntelij XD");
+        //passenger.setId(1);*/
 
         try{
 
             PassengersDAO dao = new PassengerDAOImpl();
-            //dao.modificar(passenger);
+            //dao.save(passenger);
 
-            dao.findAll("1");
+            dao.findAll("CUU");
 
-            for (Passenger p : dao.findAll("1")){
+            for (Passenger p : dao.findAll("CUU")){
 
                 System.out.print(p.getId()+" ");
                 System.out.print(p.getName()+" ");

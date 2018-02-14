@@ -13,7 +13,7 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
 
     @Override
     public void save(Passenger passenger) throws Exception {
-        try{
+        try {
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("INSERT INTO \"Escala\".passenger(\n" +
                     "\tid, name, travel, phone, \"eMail\", \"addressStreet\", \"addressCity\", \"addressColony\", \"addressPC\", notes)\n" +
@@ -29,20 +29,20 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
             statementSQL.setInt(9, passenger.getAddressPC());
             statementSQL.setString(10, passenger.getNotes());
             statementSQL.executeUpdate();
-        } catch(Exception e){
+        } catch (Exception e) {
             throw e;
-        } finally{
+        } finally {
             this.cerrar();
         }
     }
 
     @Override
     public void update(Passenger passenger) throws Exception {
-        try{
+        try {
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("UPDATE \"Escala\".passenger\n" +
-                    "\tSET id=?, name=?, travel=?, phone=?, \"eMail\"=?, \"addressStreet\"=?, \"addressCity\"=?, \"addressColony\"=?, \"addressPC\"=?, notes=?\n" +
-                    "\tWHERE id=?;");
+                    "\tSET id=?, name=?, travel=?, phone=?, \"eMail\"=?, \"addressStreet\"=?, \"addressCity\"=?, " +
+                    "\"addressColony\"=?, \"addressPC\"=?, notes=? WHERE id=?;");
             statementSQL.setInt(1, passenger.getId());
             statementSQL.setString(2, passenger.getName());
             statementSQL.setString(3, passenger.getTravel());
@@ -55,24 +55,24 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
             statementSQL.setString(10, passenger.getNotes());
             statementSQL.setInt(11, passenger.getId());
             statementSQL.executeUpdate();
-        } catch(Exception e){
+        } catch (Exception e) {
             throw e;
-        } finally{
+        } finally {
             this.cerrar();
         }
     }
 
     @Override
     public void delete(Passenger passenger) throws Exception {
-        try{
+        try {
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("DELETE FROM \"Escala\".passenger\n" +
                     "\tWHERE id=?");
             statementSQL.setInt(1, passenger.getId());
             statementSQL.executeUpdate();
-        }catch(Exception e){
+        } catch (Exception e) {
             throw e;
-        }finally{
+        } finally {
             this.cerrar();
         }
     }
@@ -81,14 +81,14 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
     public List<Passenger> findAll() throws Exception {
         List<Passenger> lista = null;
 
-        try{
+        try {
             this.conectar();
             PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger");
 
             lista = new ArrayList();
             ResultSet statementSQL2 = statementSQL.executeQuery();
-            while(statementSQL2.next()){
-                Passenger passenger = new Passenger("", "","", "");
+            while (statementSQL2.next()) {
+                Passenger passenger = new Passenger("", "","" , "");
 
                 passenger.setId(statementSQL2.getInt("id"));
                 passenger.setName(statementSQL2.getString("name"));
@@ -106,9 +106,9 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
             statementSQL2.close();
             statementSQL.close();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             throw e;
-        }finally{
+        } finally {
             this.cerrar();
         }
         return lista;
@@ -116,31 +116,24 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
 
     @Override
     public List<Passenger> findAll(String search) throws Exception {
-
         List<Passenger> lista = null;
-        Set<Passenger> result = new HashSet<>();
 
-        try{
+        try {
             this.conectar();
 
-            if (search.matches("[a-zA-Z]+.?")){
+            //if (search.matches("[a-zA-Z]+.?")){
                 // TODO search for string fields
                 PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger " +
-                        "WHERE name = ? OR travel = ? OR phone = ? OR \"eMail\" = ? OR \"addressStreet\" = ? OR " +
-                        "\"addressCity\" = ? OR \"addressColony\" = ? OR notes = ?");
-                statementSQL.setString(1, search);
-                statementSQL.setString(2, search);
-                statementSQL.setString(3, search);
-                statementSQL.setString(4, search);
-                statementSQL.setString(5, search);
-                statementSQL.setString(6, search);
-                statementSQL.setString(7, search);
-                statementSQL.setString(8, search);
+                        "WHERE id LIKE '%"+ search +"%' OR name LIKE '%"+ search +"%' OR travel LIKE '%"+ search +"%' OR " +
+                        "phone LIKE '%"+ search +"%' OR \"eMail\" LIKE '%"+ search +"%' OR " +
+                        "\"addressStreet\" LIKE '%"+ search +"%' OR \"addressCity\" LIKE '%"+ search +"%' OR " +
+                        "\"addressColony\" LIKE '%"+ search +"%' OR \"addressPC\" LIKE '%"+ search +"%' OR " +
+                        "notes LIKE '%"+ search +"%';");
 
                 lista = new ArrayList();
                 ResultSet statementSQL2 = statementSQL.executeQuery();
-                while(statementSQL2.next()){
-                    Passenger passenger = new Passenger("", "","", "");
+                while (statementSQL2.next()) {
+                    Passenger passenger = new Passenger("", "","" , "");
 
                     passenger.setId(statementSQL2.getInt("id"));
                     passenger.setName(statementSQL2.getString("name"));
@@ -158,18 +151,15 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
                 statementSQL2.close();
                 statementSQL.close();
 
-            } else {
+            /*} else {
                 Integer temp = Integer.valueOf(search);
                 // TODO search for integer fields
-                PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger " +
-                        "WHERE id = 0 OR \"addressPC\" = 0 ");
-                statementSQL.setInt(1, temp);
-                statementSQL.setInt(2, temp);
+                PreparedStatement statementSQL = this.conexion.prepareStatement("");
 
                 lista = new ArrayList();
                 ResultSet statementSQL2 = statementSQL.executeQuery();
-                while(statementSQL2.next()){
-                    Passenger passenger = new Passenger("", "","", "");
+                while (statementSQL2.next()) {
+                    Passenger passenger = new Passenger("", "","" , "");
 
                     passenger.setId(statementSQL2.getInt("id"));
                     passenger.setName(statementSQL2.getString("name"));
@@ -186,16 +176,14 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
                 }
                 statementSQL2.close();
                 statementSQL.close();
-            }
 
-        }catch(Exception e){
+            }*/
+
+        } catch (Exception e) {
             throw e;
-        }finally{
+        } finally {
             this.cerrar();
         }
         return lista;
     }
-
-    //Texto random, a ver si sirve la configuracion que hice con Intelij
-
 }

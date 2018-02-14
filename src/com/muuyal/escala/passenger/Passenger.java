@@ -1,5 +1,6 @@
 package com.muuyal.escala.passenger;
 
+import javax.print.attribute.IntegerSyntax;
 import java.*;
 
 public class Passenger {
@@ -22,11 +23,11 @@ public class Passenger {
         this.eMail = eMail;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
