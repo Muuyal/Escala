@@ -121,14 +121,12 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
         try {
             this.conectar();
 
-            //if (search.matches("[a-zA-Z]+.?")){
+            if (search.matches("[a-zA-Z]+.?")){
                 // TODO search for string fields
                 PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger " +
-                        "WHERE id LIKE '%"+ search +"%' OR name LIKE '%"+ search +"%' OR travel LIKE '%"+ search +"%' OR " +
-                        "phone LIKE '%"+ search +"%' OR \"eMail\" LIKE '%"+ search +"%' OR " +
-                        "\"addressStreet\" LIKE '%"+ search +"%' OR \"addressCity\" LIKE '%"+ search +"%' OR " +
-                        "\"addressColony\" LIKE '%"+ search +"%' OR \"addressPC\" LIKE '%"+ search +"%' OR " +
-                        "notes LIKE '%"+ search +"%';");
+                        "WHERE name LIKE '%"+ search +"%' OR travel LIKE '%"+ search +"%' OR phone LIKE '%"+ search +"%' OR" +
+                        " \"eMail\" LIKE '%"+ search +"%' OR \"addressStreet\" LIKE '%"+ search +"%' OR " +
+                        "\"addressCity\" LIKE '%"+ search +"%' OR \"addressColony\" LIKE '%"+ search +"%' OR  notes LIKE '%"+ search +"%'");
 
                 lista = new ArrayList();
                 ResultSet statementSQL2 = statementSQL.executeQuery();
@@ -151,10 +149,11 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
                 statementSQL2.close();
                 statementSQL.close();
 
-            /*} else {
+            } else {
                 Integer temp = Integer.valueOf(search);
                 // TODO search for integer fields
-                PreparedStatement statementSQL = this.conexion.prepareStatement("");
+                PreparedStatement statementSQL = this.conexion.prepareStatement("SELECT * FROM \"Escala\".passenger " +
+                        "WHERE id = '"+ temp +"' OR phone LIKE '%"+ temp +"%' OR \"addressPC\" = '"+ temp +"'");
 
                 lista = new ArrayList();
                 ResultSet statementSQL2 = statementSQL.executeQuery();
@@ -177,7 +176,7 @@ public class PassengerDAOImpl  extends Conexion implements PassengersDAO {
                 statementSQL2.close();
                 statementSQL.close();
 
-            }*/
+            }
 
         } catch (Exception e) {
             throw e;

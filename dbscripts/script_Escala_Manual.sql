@@ -1,4 +1,4 @@
---Borrar y crear la BD
+--------------------------------------------------------------------------Borrar y crear la BD
 DROP DATABASE Escala;
 CREATE DATABASE Escala;
  WITH 
@@ -14,14 +14,15 @@ DROP SCHEMA "Escala" ;
 CREATE SCHEMA "Escala"
     AUTHORIZATION postgres;
 
---Tablas
---passenger
+----------------------------------------------------------------------------------Tablas
+
+---------------------------------------------------------------------------------passenger
 
 DROP TABLE "Escala".passenger;
 
 CREATE TABLE "Escala".passenger
 (
-    id character(6) COLLATE pg_catalog."default" NOT NULL,
+    id integer NOT NULL,
     name character(50) COLLATE pg_catalog."default" NOT NULL,
     travel character varying(30) COLLATE pg_catalog."default" NOT NULL,
     phone character varying(10) COLLATE pg_catalog."default" NOT NULL,
@@ -40,7 +41,8 @@ TABLESPACE pg_default;
 
 ALTER TABLE "Escala".passenger
     OWNER to postgres;
---payment
+
+--------------------------------------------------------------------------------payment
 
 DROP TABLE "Escala".payment;
 
@@ -63,11 +65,32 @@ TABLESPACE pg_default;
 ALTER TABLE "Escala".payment
     OWNER to postgres;
 
---staff
+--------------------------------------------------------------------------------staff
 
+-- DROP TABLE "Escala".staff;
 
+CREATE TABLE "Escala".staff
+(
+    id integer NOT NULL,
+    name character(50) COLLATE pg_catalog."default" NOT NULL,
+    "eMail" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    phone character varying(10) COLLATE pg_catalog."default",
+    address character varying(90) COLLATE pg_catalog."default",
+    area character(20) COLLATE pg_catalog."default",
+    salary integer NOT NULL,
+    "user" character varying(20) COLLATE pg_catalog."default",
+    password character varying(20) COLLATE pg_catalog."default",
+    CONSTRAINT staff_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
 
---travel
+ALTER TABLE "Escala".staff
+    OWNER to postgres;
+
+---------------------------------------------------------------------------------travel
 
 DROP TABLE "Escala".travel;
 
@@ -90,5 +113,22 @@ TABLESPACE pg_default;
 ALTER TABLE "Escala".travel
     OWNER to postgres;
 
---user
+---------------------------------------------------------------------------------user
+
+DROP TABLE "Escala"."user";
+
+CREATE TABLE "Escala"."user"
+(
+    "userID" character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    rol character varying(30) COLLATE pg_catalog."default",
+    CONSTRAINT user_pkey PRIMARY KEY ("userID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE "Escala"."user"
+    OWNER to postgres;
 
