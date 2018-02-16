@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd443bb7-8895-44de-898c-9c30f149b92e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dbscripts/script_Escala_Manual.sql" afterPath="$PROJECT_DIR$/dbscripts/script_Escala_Manual.sql" />
       <change beforePath="$PROJECT_DIR$/out/production/EscalaTravel/escala/production/Escala/com/muuyal/escala/dao/PassengerDAOImpl.class" afterPath="$PROJECT_DIR$/out/production/EscalaTravel/escala/production/Escala/com/muuyal/escala/dao/PassengerDAOImpl.class" />
       <change beforePath="$PROJECT_DIR$/out/production/EscalaTravel/escala/production/Escala/escala/Pruebas.class" afterPath="$PROJECT_DIR$/out/production/EscalaTravel/escala/production/Escala/escala/Pruebas.class" />
       <change beforePath="$PROJECT_DIR$/src/com/muuyal/escala/dao/PassengerDAOImpl.java" afterPath="$PROJECT_DIR$/src/com/muuyal/escala/dao/PassengerDAOImpl.java" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="Passenger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/muuyal/escala/passenger/Passenger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state relative-caret-position="272">
+              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#635#636#0" expanded="true" />
@@ -73,8 +71,8 @@
       <file leaf-file-name="PassengerDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/muuyal/escala/dao/PassengerDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="126" column="106" lean-forward="true" selection-start-line="126" selection-start-column="106" selection-end-line="126" selection-end-column="106" />
+            <state relative-caret-position="153">
+              <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -83,8 +81,8 @@
       <file leaf-file-name="Pruebas.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/escala/Pruebas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="86" column="59" lean-forward="true" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+            <state relative-caret-position="221">
+              <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -155,8 +153,8 @@
         <option value="$PROJECT_DIR$/src/com/muuyal/escala/dao/UserDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/com/muuyal/escala/interfaces/PassengersDAO.java" />
         <option value="$PROJECT_DIR$/src/com/muuyal/escala/passenger/Passenger.java" />
-        <option value="$PROJECT_DIR$/src/com/muuyal/escala/dao/PassengerDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/escala/Pruebas.java" />
+        <option value="$PROJECT_DIR$/src/com/muuyal/escala/dao/PassengerDAOImpl.java" />
       </list>
     </option>
   </component>
@@ -458,7 +456,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.46066564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -840,8 +838,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/muuyal/escala/passenger/Passenger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        <state relative-caret-position="272">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#635#636#0" expanded="true" />
@@ -890,16 +888,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/muuyal/escala/dao/PassengerDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="126" column="106" lean-forward="true" selection-start-line="126" selection-start-column="106" selection-end-line="126" selection-end-column="106" />
+        <state relative-caret-position="153">
+          <caret line="123" column="41" lean-forward="true" selection-start-line="123" selection-start-column="41" selection-end-line="123" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/escala/Pruebas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="86" column="59" lean-forward="true" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+        <state relative-caret-position="221">
+          <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
           <folding />
         </state>
       </provider>

@@ -63,7 +63,7 @@ public class Pruebas {
         passenger.setTravel("CDMX-MZT");
         passenger.setPhone("6180785634");
         passenger.seteMail("correo@gmail.com");
-        passenger.setAddressStreet("Por ahi");
+        passenger.setAddressStreet("1ra Poniente");
         passenger.setAddressCity("Aguas Calientes");
         passenger.setAddressColony("Sur");
         passenger.setAddressPC(12345);
@@ -75,9 +75,9 @@ public class Pruebas {
             PassengersDAO dao = new PassengerDAOImpl();
             //dao.save(passenger);
 
-            dao.findAll("110");
+            dao.findAll("1ra");
 
-            for (Passenger p : dao.findAll("110")){
+            for (Passenger p : dao.findAll("1ra")){
 
                 System.out.print(p.getId()+" ");
                 System.out.print(p.getName()+" ");
